@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Якість води</title>
+</head>
+<body>
+    <div class="background">
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="header_data">
+                        <h1>Оцінка якості води</h1>
+                    </div>
+                </div>
+            </header>
+            <section class="main">
+                <div class="container">
+                    <form action="{{url_for('predict')}}" method="POST">
+                       <div class="form_data">
+                           <fieldset>
+                                <label for="ph">Значення PH:</label>
+                                <input name="ph" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="hardness">Твердість:</label>
+                                <input name="hardness" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="solids">Твердість речовини:</label>
+                                <input name="solids" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="chloramines">Хлораміни:</label>
+                                <input name="chloramines" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="sulfate">Сульфіт:</label>
+                                <input name="sulfate" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="conductivity">Провідність:</label>
+                                <input name="conductivity" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="organic_carbon">Органічний вуглець:</label>
+                                <input name="organic_carbon" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="trihalomethanes">Тригалометани:</label>
+                                <input name="trihalomethanes" type="number" class="text_value" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="turbidity">Мутність:</label>
+                                <input name="turbidity" type="number" class="text_value" required>
+                            </fieldset>
+                       </div>
+                        <input type="submit" value="Оцінити" class="submit_button">
+                        <spa>Оцінка: {{result}}</spa>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

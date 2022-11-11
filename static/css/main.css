@@ -1,0 +1,127 @@
+.background {
+    width: 100%;
+    min-height: 100%;
+    background-image: url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+}
+
+.background::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--color_1);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3em;
+}
+
+.main {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    padding: 1em 0;
+    background-color: var(--color_1);
+    opacity: 0.8;
+    border-radius: 5%;
+
+}
+
+.form_data {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 1em;
+}
+
+.form_data fieldset {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+}
+
+.text_value {
+    width: 100%;
+    padding: 0.5em;
+    background-color: transparent;
+    color: var(--color_2);
+    caret-color: var(--color_2);
+    border: 1px solid var(--color_2);
+    border-radius: 5%;
+}
+
+.submit_button {
+    padding: 0.5em 1em;
+    background-color: var(--color_3);
+    color: var(--color_1);
+    text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+    .main form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .main form {
+        padding: 1em;
+    }
+
+    .form_data {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1em;
+    }
+
+    .form_data fieldset {
+        width: 100%;
+    }
+}
